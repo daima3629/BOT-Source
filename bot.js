@@ -7,7 +7,7 @@ var data = require('./data.json');
 client.on('ready', message =>
 {
 	console.log(`Logged in as ${client.user.tag}`);
-  client.user.setActivity('prefix:db/', {
+  client.user.setActivity('prefix:y!', {
     type: 'STREAMING'
   });
 });
@@ -69,7 +69,7 @@ function omikuji(){
     break;
   }
 }
-  function time(){
+  function now(){
     process.env.TZ = 'Asia/Tokyo';
       t=new Date();
     hour=t.getHours();
@@ -86,15 +86,15 @@ function omikuji(){
 client.on('message', message =>
 {
   switch(message.content){
-    case 'db/help':
+    case 'y!help':
       sendRichEmbed(
       message,
       'ddf542',
       'コマンドヘルプ',
-      '`db/help` このコマンドです\n`db/おみくじ` おみくじが引けます\n`db/time` 現在時刻を確認できます\n`db/say` 言ったことをそのまま返してくれます'
+      '`y!help` このコマンドです\n`y!おみくじ` おみくじが引けます\n`y!now` 現在時刻を確認できます\n`y!say` 言ったことをそのまま返してくれます'
       );
     break;
-    case 'db/おみくじ':
+    case 'y!おみくじ':
       omikuji();
       sendRichEmbed(
       message,
@@ -103,7 +103,7 @@ client.on('message', message =>
       msg
       );
     break;
-    case 'db/time':
+    case 'y!now':
       time();
       sendRichEmbed(
       message,
@@ -114,7 +114,7 @@ client.on('message', message =>
     break;
   }
   switch(true){
-    case message.content.startsWith('db/say'):
+    case message.content.startsWith('y!say'):
       message.channel.send(message.content.slice(6));
     break;
   }
