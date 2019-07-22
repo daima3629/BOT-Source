@@ -1,7 +1,7 @@
 // Discord bot implements
 const discord = require('discord.js');
 const client = new discord.Client();
-const voice = require('C:/Users/sasaki/Desktop/BOT-Source-master/voice.js');
+const voice = require('/voice.js');
 var data = require('./data.json');
 
 client.on('ready', message =>
@@ -248,15 +248,15 @@ client.on('message', message =>
               },
               {
                 name: ":two:開発協力者",
-                value: "***daima3629氏***"
+                value: ""
               },
               {
                 name: "field :three:",
-                value: "__ここはfield 3の内容だよ__"
+                value: ""
               },
               {
                 name: "開発者へのお問い合わせ",
-                value: "yutarou1241477(https://discord.gg/7ctVbtc)",
+                value: "yutarou1241477()",
                 inline: true
               },
               {
@@ -347,10 +347,10 @@ client.on('message', message =>
   }
   if(message.content.startsWith('y!admin')){
     if(message.author.id == '534994298827964416'){
-        message.channel.send('BOT ADMIN ONLY');
-				message.channel.send('https://discordapp.com/api/oauth2/authorize?client_id=600103765445705728&permissions=0&scope=bot')
+        message.channel.send('BOT管理者用コマンド');
+				message.channel.send('')
     }else{
-       message.channel.send('あなたはBOT管理者ではないため、このコマンドは実行できません');
+       message.channel.send('YOU ARE NOT BOT ADMIN!!');
     }
   }
 }
@@ -358,4 +358,4 @@ client.on('message', message =>
 //メイン終わり
 
 
-client.login('NjAwMTAzNzY1NDQ1NzA1NzI4.XSvAsQ.HteFkH_LUH77-qv7omR_41T3Vog');
+client.login('ここにはbotトークン');
